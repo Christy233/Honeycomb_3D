@@ -14,8 +14,8 @@ public class HexagonManager : MonoBehaviour
     {
         foreach (Transform child in transform)
         {
-            hexagons.Add(child.name, child.GetComponent<Hexagon>());         
-        }
+            hexagons.Add(child.name, child.GetComponent<Hexagon>());      
+        }       
         
     }
 
@@ -77,6 +77,7 @@ public class HexagonManager : MonoBehaviour
             Hexagon hex = targetHex;
             while (hex != startHex)
             {
+                //hex.SetRouteHex();
                 route.Add(hex); 
                 Hexagon fatherHex = hex.GetFatherHexagon();
                 hex = fatherHex;

@@ -7,18 +7,26 @@ public class Hexagon : MonoBehaviour
     Hexagon father = null;
     public Hexagon[] neighbors = new Hexagon[6];
     public bool isPass = true;
-    public bool inUse = false;
+    public GameObject notPassHex;
+    public Mesh routeHex;
+
     private float gValue = 999f;
     private float hValue = 999f;
+
     
     public void Reset()
     {
 
     }
-    public void HexagonInUse()
+    public void Start()
     {
-        
+        if (!isPass)
+            Instantiate(notPassHex, this.transform.position, Quaternion.identity);
+    }
 
+    public void SetRouteHex()
+    {
+        this.GetComponent<MeshFilter>().mesh = routeHex;
     }
     public Hexagon[] GetNeighborList()
     {
@@ -34,6 +42,7 @@ public class Hexagon : MonoBehaviour
     {
         return father;
     }
+
     //able to pass
     public void SetCanPass(bool f)
     {
