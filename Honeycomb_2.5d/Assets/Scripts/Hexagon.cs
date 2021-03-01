@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Hexagon : MonoBehaviour
 {
+    public int nameValue;
     Hexagon father = null;
     public Hexagon[] neighbors = new Hexagon[6];
     public bool isPass = true;
@@ -23,6 +24,11 @@ public class Hexagon : MonoBehaviour
         if (!isPass)
             Instantiate(notPassHex, this.transform.position, Quaternion.identity);
     }
+
+    //public int GetValue()
+    //{
+    //    return nameValue;
+    //}
 
     public void SetRouteHex()
     {

@@ -6,7 +6,6 @@ using System;
 public class HexagonManager : MonoBehaviour
 {
     Dictionary<string, Hexagon> hexagons = new Dictionary<string, Hexagon>();
-
     List<Hexagon> openList = new List<Hexagon>();
     List<Hexagon> closeList = new List<Hexagon>();
 
@@ -14,9 +13,8 @@ public class HexagonManager : MonoBehaviour
     {
         foreach (Transform child in transform)
         {
-            hexagons.Add(child.name, child.GetComponent<Hexagon>());      
-        }       
-        
+            hexagons.Add(child.name, child.GetComponent<Hexagon>());
+        }
     }
 
     public List<Hexagon> SearchRoute(Hexagon startHex, Hexagon targetHex)
