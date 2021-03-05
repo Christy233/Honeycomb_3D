@@ -25,11 +25,6 @@ public class Hexagon : MonoBehaviour
             Instantiate(notPassHex, this.transform.position, Quaternion.identity);
     }
 
-    //public int GetValue()
-    //{
-    //    return nameValue;
-    //}
-
     public void SetRouteHex()
     {
         this.GetComponent<MeshFilter>().mesh = routeHex;

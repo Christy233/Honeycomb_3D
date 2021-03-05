@@ -39,12 +39,12 @@ public class HexagonManager : MonoBehaviour
                     neighbor.SetFatherHexagon(nowHexagon);
                 }
                 if (closeList.Contains(neighbor) || !neighbor.CanPass())
-                {                    
+                {
                     continue;
                 }
 
                 if (openList.Contains(neighbor))//if node inside the openlist 
-                {                   
+                {
                     float assueGValue = neighbor.ComputeGValue(nowHexagon) + nowHexagon.GetgValue();
                     if (assueGValue < neighbor.GetgValue())
                     {
@@ -54,17 +54,17 @@ public class HexagonManager : MonoBehaviour
                     }
                 }
                 else
-                {                   
+                {
                     neighbor.SethValue(neighbor.ComputeHValue(targetHex));
-                    neighbor.SetgValue(neighbor.ComputeGValue(nowHexagon) + nowHexagon.GetgValue()); 
+                    neighbor.SetgValue(neighbor.ComputeGValue(nowHexagon) + nowHexagon.GetgValue());
                     openList.Add(neighbor);
                     neighbor.SetFatherHexagon(nowHexagon);
                 }
             }
-            if (openList.Count <= 0)             
+            if (openList.Count <= 0)
                 break;
             else
-                nowHexagon = openList[0];           
+                nowHexagon = openList[0];
         }
         openList.Clear();
         closeList.Clear();
@@ -75,8 +75,7 @@ public class HexagonManager : MonoBehaviour
             Hexagon hex = targetHex;
             while (hex != startHex)
             {
-                //hex.SetRouteHex();
-                route.Add(hex); 
+                route.Add(hex);
                 Hexagon fatherHex = hex.GetFatherHexagon();
                 hex = fatherHex;
             }
