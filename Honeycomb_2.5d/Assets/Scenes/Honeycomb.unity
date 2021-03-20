@@ -1146,7 +1146,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 302846441}
+      - m_Target: {fileID: 1750174254}
         m_MethodName: ClickMoveButton
         m_Mode: 1
         m_Arguments:
@@ -2442,7 +2442,7 @@ PrefabInstance:
     - target: {fileID: 4790530888321608331, guid: ea579903b576f5b439857c216f5dd593,
         type: 3}
       propertyPath: isPass
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4790530888321608331, guid: ea579903b576f5b439857c216f5dd593,
         type: 3}
